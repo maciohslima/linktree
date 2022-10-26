@@ -21,7 +21,8 @@ a {
 }
 
 body {
-    background: var(--bg-color);
+    //background: var(--bg-color);
+    background: linear-gradient(#23C9FF, #7CC6FE, #CCD5FF, #E7BBE3);
     color: var(--text-color);
     font-family: 'Fira Code', sans-serif;
 }
