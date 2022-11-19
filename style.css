@@ -7,12 +7,39 @@
 
 /* Declaração de Variáveis */
 
-body.dark-blue {
-    --bg-color:#00082F;
+.light,
+:root:has(#light:checked) {
+    --bg-color: gray;
     --text-color: #FFF;
     --primary-color: #4263EB;
     --primary-color-dark: #364FC7;
 }
+
+.dark,
+:root:has(#dark:checked) {
+    --bg-color: #121214;
+    --text-color: #FFF;
+    --primary-color: #4263EB;
+    --primary-color-dark: #364FC7;
+}
+
+.dark-blue,
+:root:has(#dark-blue:checked) {
+    --bg-color:#01157a;
+    --text-color: #FFF;
+    --primary-color: #4263EB;
+    --primary-color-dark: #364FC7;
+}
+
+.light-green,
+:root:has(#light-green:checked) {
+    --bg-color: lightgreen;
+    --text-color: rgb(5, 14, 102);
+    --primary-color: #ebd242;
+    --primary-color-dark: #364FC7;
+    --text-color-hover: #FFF;
+}
+
 
 /* Corpo do HTML */
 
@@ -21,8 +48,8 @@ a {
 }
 
 body {
-    //background: var(--bg-color);
-    background: linear-gradient(#23C9FF, #7CC6FE, #CCD5FF, #E7BBE3);
+    background-color: var(--bg-color);
+    /* background: linear-gradient(#23C9FF, #7CC6FE, #CCD5FF, #E7BBE3); */
     color: var(--text-color);
     font-family: 'Fira Code', sans-serif;
 }
@@ -80,6 +107,7 @@ ul li a {
 
 ul li a:hover{
     background: var(--primary-color-dark);
+    color: var(--text-color-hover);
 }
 
 footer {
@@ -103,4 +131,63 @@ footer a {
 
 .fa-brands {
     margin-right: 8px;
+}
+
+.theme-selector {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    background-color: white;
+    box-shadow: 0 0 1rem rgb(0, 0, 0 / 0.2);
+
+    padding: 0.4rem;
+    border-radius: 8px;
+
+    position: fixed;
+    top: 7.5rem;
+    left: 65%;
+    transform: translate(-50%);
+}
+
+input[type="radio"] {
+    appearance: none;
+    border: 2px solid var(--input-color);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+    background-color: var(--input-color);
+}
+
+#light {
+    --input-color: gray;
+}
+
+#dark {
+    --input-color: #000;
+}
+
+#dark-blue {
+    --input-color: #01157a;
+}
+
+#light-green {
+    --input-color: #90EE90;
+}
+
+@media screen and (max-width: 450px) {
+    .theme-selector {
+        left: 90%;
+    }
+}
+
+@media  screen and (max-width: 1024px) {
+    .theme-selector {
+        left: 75%;
+    }
+    
 }

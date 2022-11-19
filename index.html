@@ -23,10 +23,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 
 </head>
-<body class="dark-blue">
+<body>
     <div class="container">
         <!-- Cabeçalho -->
         <img src="https://github.com/maciohslima.png" alt="Imagem de Perfil" title="Mácio Lima" class="avatar">
+
+        <ul class="theme-selector">
+            <li>
+                <input type="radio" name="color" id="light">
+            </li>
+            <li>
+                <input type="radio" name="color" id="dark">
+            </li>
+            <li>
+                <input type="radio" name="color" id="dark-blue">
+            </li>
+            <li>
+                <input type="radio" name="color" id="light-green" checked>
+            </li>
+        </ul>
+
         <h1>Mácio Lima</h1>
         <p class="username">@maciohslima</p>
 
@@ -70,5 +86,6 @@
         </footer>
     </div>
     
+    <script src="theme-selector.js"></script>
 </body>
 </html>
