@@ -179,15 +179,23 @@ input[type="radio"]:checked {
     --input-color: #90EE90;
 }
 
-@media screen and (max-width: 450px) {
-    .theme-selector {
-        left: 90%;
-    }
-}
+/* Media Queries */
 
 @media  screen and (max-width: 1024px) {
     .theme-selector {
         left: 75%;
     }
     
+}
+
+@media screen and (max-width: 550px) {
+    .theme-selector {
+        left: 90%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .theme-selector {
+        left: 95%;
+    }
 }
