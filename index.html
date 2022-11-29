@@ -18,30 +18,28 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/10b61ae4b3.js" crossorigin="anonymous"></script>
 
+    <!-- Box icons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="./css/sidebar-menu.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 
 </head>
 <body>
     <div class="container">
-        <!-- Cabeçalho -->
+    
         <img src="https://github.com/maciohslima.png" alt="Imagem de Perfil" title="Mácio Lima" class="avatar">
 
-        <ul class="theme-selector" title="Escolha um tema">
-            <li>
-                <input type="radio" name="color" id="light" title="Tema Light">
-            </li>
-            <li>
-                <input type="radio" name="color" id="dark" title="Tema Dark">
-            </li>
-            <li>
-                <input type="radio" name="color" id="dark-blue" title="Tema Azul">
-            </li>
-            <li>
-                <input type="radio" name="color" id="light-green" checked title="Tema Copa">
-            </li>
-        </ul>
+        <div class="bottom-content">
+                <!-- <span>Ligth Mode</span> -->
+                <div class="toggle-switch">
+                    <i class="bx bx-sun icon sun"></i>
+                    <span class="switch"></span>
+                    <i class="bx bx-moon icon moon"></i>
+                </div>
+        </div>
 
         <h1>Mácio Lima</h1>
         <p class="username">@maciohslima</p>
@@ -85,7 +83,8 @@
             Feito com <i class="fa-solid fa-heart"></i> por <a href="http://github.com/maciohslima">Mácio Lima</a>
         </footer>
     </div>
-    
-    <script src="theme-selector.js"></script>
+
+    <!-- <script src="theme-selector.js"></script> -->
+    <script src="./js/theme-selector-button.js"></script>
 </body>
 </html>

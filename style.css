@@ -7,38 +7,55 @@
 
 /* Declaração de Variáveis */
 
-.light,
-:root:has(#light:checked) {
-    --bg-color: gray;
-    --text-color: #FFF;
-    --primary-color: #4263EB;
-    --primary-color-dark: #364FC7;
+:root {
+    /* Cores */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-dark: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #000;
+    --text-color-btn: #FFF;
+
+    /* Transition */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
 }
 
-.dark,
+/* .light,
+:root:has(#light:checked) {
+    --bg-color: #FFF;
+    --text-color: #000;
+    --primary-color: #bbc5ec;
+    --primary-color-dark: #768aeb;
+} */
+
+/* .dark,
 :root:has(#dark:checked) {
     --bg-color: #121214;
     --text-color: #FFF;
     --primary-color: #4263EB;
     --primary-color-dark: #364FC7;
-}
+} */
 
-.dark-blue,
+/* .dark-blue,
 :root:has(#dark-blue:checked) {
     --bg-color:#01157a;
     --text-color: #FFF;
     --primary-color: #4263EB;
     --primary-color-dark: #364FC7;
-}
+} */
 
-.light-green,
+/* .light-green,
 :root:has(#light-green:checked) {
     --bg-color: lightgreen;
     --text-color: rgb(5, 14, 102);
     --primary-color: #ebd242;
     --primary-color-dark: #364FC7;
     --text-color-hover: #FFF;
-}
+} */
 
 
 /* Corpo do HTML */
@@ -48,10 +65,32 @@ a {
 }
 
 body {
-    background-color: var(--bg-color);
-    /* background: linear-gradient(#23C9FF, #7CC6FE, #CCD5FF, #E7BBE3); */
+
+    min-height: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
     color: var(--text-color);
     font-family: 'Fira Code', sans-serif;
+}
+
+::selection {
+    background-color: var(--body-color);
+    color: #FFF;
+}
+
+.icon {
+    font-size: 20px;
+    padding: 5px;
+}
+
+body.dark{
+    --body-color: #18191A;
+    --sidebar-color: #242526;
+    --primary-color: #3A3B3C;
+    --primary-color-dark: #FFF;
+    --text-color-hover: #000;
+    --text-color: #CCC;
+    --text-color-btn: #FFF;
 }
 
 .container {
@@ -96,7 +135,7 @@ ul li a {
     align-items: center;
     justify-content: center;
     background: var(--primary-color);
-    color: var(--text-color);
+    color: var(--text-color-btn);
     font-size: 14px;
 
     margin-bottom: 16px;
@@ -133,7 +172,140 @@ footer a {
     margin-right: 8px;
 }
 
-.theme-selector {
+/* Theme Selector */
+
+.mode{
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    position: relative;
+    transition: var(--tran-05);
+}
+
+.mode .sun-moon{
+    height: 50px;
+    width: 60px;
+    /* position: absolute; */
+}
+
+.mode .sun-moon i {
+    position: absolute;
+}
+
+.mode .sun-moon i.sun {
+    opacity: 0;
+}
+
+body.dark .mode .sun-moon i.sun {
+    opacity: 1;
+}
+
+body.dark .mode .sun-moon i.moon {
+    opacity: 0;
+}
+
+.toggle-switch {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translate(-50%);
+    background-color: var(--sidebar-color);
+    transition: var(--tran-04);
+}
+
+body.dark .switch::before {
+    left: 20px;
+}
+
+.bottom-content .toggle-switch{
+    position: absolute;
+    right: 50%;
+    height: 5%;
+    transform: translate(50%);
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
+
+.switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+    transition: var(--tran-04);
+}
+
+body.dark .switch::before{
+    left: 30px;
+}
+
+.home{
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+.home .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 12px 60px;
+}
+
+.sidebar.close ~ .home{
+    left: 78px;
+    height: 100vh;
+    width: calc(100% - 78px);
+}
+body.dark .home .text{
+    color: var(--text-color);
+}
+
+/* .theme-selector {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -177,7 +349,7 @@ input[type="radio"]:checked {
 
 #light-green {
     --input-color: #90EE90;
-}
+} */
 
 /* Media Queries */
 
