@@ -9,12 +9,12 @@
 
 :root {
     /* Cores */
-    --body-color: #E4E9F7;
+    --body-color: #01157a;
     --sidebar-color: #FFF;
     --primary-color: #695CFE;
-    --primary-color-dark: #F6F5FF;
+    --primary-color-dark: #364FC7;
     --toggle-color: #DDD;
-    --text-color: #000;
+    --text-color: #FFF;
     --text-color-btn: #FFF;
 
     /* Transition */
